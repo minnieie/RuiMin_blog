@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BLACKPINK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">
+        <img src="/Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
+    </a>
+    <ul>
+        <li><a href="index.html">HOME</a></li> 
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="store.html">STORE</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="subscribe.html">SUBSCRIBE</a></li>
+    </ul>
+</nav>
+
+<!-- Banner Image -->
+<img src="Images/BLACKPINK.png" alt="BLACKPINK Image" width="100%" />
+
+<!-- Stream Now Section -->
+<section id="stream-now" class="stream-now-section">
+    <h2>Stream Now</h2>
+    <!-- Born Pink Image -->
+    <img src="Images/Albums/BORN PINK.jpg" alt="Born Pink Album Cover" class="born-pink-img" id="bornPinkImg" />
+    <a href="https://www.youtube.com/watch?v=qCDPprTDkJE&list=PLS4jAfE9d3aLoJfkmHvQVmRjHiaYuLBQL" target="_blank" class="stream-button">LISTEN NOW</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 BLACKPINK Fan Page | Made with 🩷 for BLINKS worldwide.</p>
+</footer>
+
+<script>
+// JavaScript to handle image click and load video
+document.getElementById("bornPinkImg").addEventListener("click", function() {
+    window.open("https://www.youtube.com/watch?v=qCDPprTDkJE&list=PLS4jAfE9d3aLoJfkmHvQVmRjHiaYuLBQL", "_blank");
+});
+</script>
 
 </body>
 </html>

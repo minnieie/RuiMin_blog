@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+}
+
+body {
+    font-family: 'Kaisei Tokumin', serif;
+    background-color: #000000;
+    color: #ff66b2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* Ensures body takes full viewport height */
+    overflow-y: auto;  /* Allows vertical scrolling */
+}
+
+nav {
+    background-color: #000000;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;  /* Ensures the nav is above the video */
+    position: relative;
+}
+
+nav .logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+nav ul li a {
+    color: #ff66b2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+.fullscreen-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the video fills the screen without stretching */
+    position: fixed;  /* Keeps video in place */
+    top: 0;
+    left: 0;
+    z-index: -1;  /* Ensures the video stays behind other content */
+}
+
+.stream-now-section {
+    padding: 3em 1em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+.stream-now-section h2 {
+    font-size: 3em;
+    color: #ff66b2;
+}
+
+.stream-button {
+    background-color: #ff66b2;
+    color: white;
+    padding: 1em 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.stream-button:hover {
+    background-color: #d14b8b;
+}
+
+.born-pink-img {
+    display: block;
+    margin: 2em auto;
+    width: 60%;
+    max-width: 600px;
+}
+
+footer {
+    background-color: #181818;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.member-profiles {
+    text-align: center;
+    padding: 50px 10px;
+    background-color: #000000;
+    margin-top: 100vh;  /* Ensures "Meet the Members" section starts after the video */
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.profile {
+    width: 200px;
+    text-align: center;
+    background-color: #ffd4da;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.store-section {
+    text-align: center;
+    padding: 3em 1em;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.store-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    color: #ff66b2;
+}
+
+/* Product Sections */
+.product-section {
+    margin-top: 3em;
+}
+
+.product-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ff66b2;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 2em;
+}
+
+.product-card {
+    background-color: #ffd4da;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff66b2;
+}
+
+.add-to-cart {
+    background-color: #ff66b2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #d14b8b;
+}
+
+/* Music Section */
+.music-section {
+    padding: 2em 1em;
+    background-color: #000000;
+}
+
+/* Featured Song */
+.featured-song {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.featured-song h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.song-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.album-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.song-info h3 {
+    font-size: 1.5em;
+    color: #ff66b2;
+}
+
+audio {
+    margin-top: 1em;
+    width: 100%;
+}
+
+/*Album Section*/
+.album-section {
+    text-align: center;
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.album-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.albums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.album-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.album-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #444;
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Subscribe Section */
+.subscribe-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px; /* Ensure it does not overlap with the navbar */
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Input Styles */
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Focus and Hover Effects */
+input[type="email"]:focus,
+select:focus {
+    border-color: #e9a8af; /* Pink border on focus */
+    outline: none;
+}
+
+input[type="email"]:hover,
+select:hover {
+    background-color: #e9a8af; /* Pink background on hover */
+    color: white; /* White text on hover */
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Button Styles */
+.register-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #e9a8af; /* Pink background */
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #f18c9e; /* Slightly darker pink on hover */
+}
+
+/* Thank You Section */
+.thank-you-section {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly dark background for contrast */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.thank-you-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.thank-you-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.back-home-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ff0066;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background-color: #ff3385;
+}
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #c1bbbb;
+}
