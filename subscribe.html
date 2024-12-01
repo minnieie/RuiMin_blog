@@ -14,7 +14,10 @@
     <a href="index.html">
         <img src="Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
     </a>
-    <ul>
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+    <ul id="nav-menu">
         <li><a href="index.html">HOME</a></li> 
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="store.html">STORE</a></li>
@@ -23,13 +26,16 @@
     </ul>
 </nav>
 
+
 <!-- Subscribe Section -->
 <section class="subscribe-section">
-    <h2>Subscribe to BLACKPINK Updates</h2>
-    <form id="subscribe-form" action="thankyou.html" method="get">
+    <h2>SUBSCRIBE TO BLACKPINK UPDATES</h2>
+    <form id="subscribe-form">
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Choose a username">
         </div>
 
         <div class="form-group">
@@ -243,12 +249,34 @@
 
         <button type="submit" class="register-button">Register</button>
     </form>
+    <div id="thank-you-message" style="display: none; margin-top: 20px; color: green; font-size: 1.2em;"></div>
 </section>
+
+<script src="js/thankyou.js"></script>
 
 
 <footer>
-    <p>&copy; 2024 BLACKPINK | Made with 🩷 for BLINKS worldwide.</p>
+    <p>&copy; 2024 BLACKPINK | Made with 🩷 for BLINKS worldwide.</p>   
+    <div class="social-links">
+        <a href="https://www.instagram.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.twitter.com/BLACKPINK" target="_blank">
+            <img src="Images/X.png" alt="Twitter">
+        </a>
+        <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook">
+        </a>
+    </div>
 </footer>
+
+
+<script>
+    function toggleMenu() {
+    var menu = document.getElementById("nav-menu");
+    menu.classList.toggle("show"); 
+}
+</script>
 
 
 </body>

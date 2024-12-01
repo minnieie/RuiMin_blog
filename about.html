@@ -12,9 +12,12 @@
 <!-- Navigation -->
 <nav>
     <a href="index.html">
-        <img src="/Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
+        <img src="Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
     </a>
-    <ul>
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+    <ul id="nav-menu">
         <li><a href="index.html">HOME</a></li> 
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="store.html">STORE</a></li>
@@ -23,9 +26,9 @@
     </ul>
 </nav>
 
-<!-- Video Section: Fullscreen and Loop -->
+<!-- Video Section: Fullscreen and Loop with Clickable Feature -->
 <div class="video-section">
-    <iframe class="fullscreen-video" src="https://www.youtube.com/embed/6apPVWaLdfU?autoplay=1&loop=1&playlist=6apPVWaLdfU" frameborder="0" allow="autoplay; fullscreen" allowfullscreen width="100" height=""></iframe>
+    <div id="video-player"></div>
 </div>
 
 <!-- Member Profiles Section -->
@@ -57,8 +60,54 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 BLACKPINK Fan Page | Made with 🩷 for BLINKS worldwide.</p>
+    <p>&copy; 2024 BLACKPINK | Made with 🩷 for BLINKS worldwide.</p>   
+    <div class="social-links">
+        <a href="https://www.instagram.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.twitter.com/BLACKPINK" target="_blank">
+            <img src="Images/X.png" alt="Twitter">
+        </a>
+        <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook">
+        </a>
+    </div>
 </footer>
+
+<script>
+    // Load the YouTube API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    // Create a YouTube player
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-player', {
+            height: '500',
+            width: '100%',
+            videoId: '6apPVWaLdfU',
+            playerVars: {
+                autoplay: 1,   
+                loop: 1,     
+                playlist: '6apPVWaLdfU'  // Ensure the video loops
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    function toggleMenu() {
+        var menu = document.getElementById("nav-menu");
+        menu.classList.toggle("show"); 
+    }
+</script>
 
 </body>
 </html>

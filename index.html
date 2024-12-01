@@ -13,9 +13,12 @@
 <!-- Navigation -->
 <nav>
     <a href="index.html">
-        <img src="/Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
+        <img src="Images/BLACKPINK-LOGO.jpg" alt="BLACKPINK Logo" class="logo">
     </a>
-    <ul>
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+    <ul id="nav-menu">
         <li><a href="index.html">HOME</a></li> 
         <li><a href="about.html">ABOUT</a></li>
         <li><a href="store.html">STORE</a></li>
@@ -23,6 +26,7 @@
         <li><a href="subscribe.html">SUBSCRIBE</a></li>
     </ul>
 </nav>
+
 
 <!-- Banner Image -->
 <img src="Images/BLACKPINK.png" alt="BLACKPINK Image" width="100%" />
@@ -37,14 +41,29 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2024 BLACKPINK Fan Page | Made with 🩷 for BLINKS worldwide.</p>
+    <p>&copy; 2024 BLACKPINK | Made with 🩷 for BLINKS worldwide.</p>   
+    <div class="social-links">
+        <a href="https://www.instagram.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.twitter.com/BLACKPINK" target="_blank">
+            <img src="Images/X.png" alt="Twitter">
+        </a>
+        <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook">
+        </a>
+    </div>
 </footer>
 
+</footer>
 <script>
-// JavaScript to handle image click and load video
 document.getElementById("bornPinkImg").addEventListener("click", function() {
     window.open("https://www.youtube.com/watch?v=qCDPprTDkJE&list=PLS4jAfE9d3aLoJfkmHvQVmRjHiaYuLBQL", "_blank");
 });
+function toggleMenu() {
+    var menu = document.getElementById("nav-menu");
+    menu.classList.toggle("show");
+}
 </script>
 
 </body>
